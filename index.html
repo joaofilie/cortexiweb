@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Cortexi</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700,700i&amp;display=swap">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/single-column-layout.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <style>
+      .async-hide {
+        opacity: 0 !important
+      }
+    </style>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      (function(a, s, y, n, c, h, i, d, e) {
+        s.className += ' ' + y;
+        h.start = 1 * new Date;
+        h.end = i = function() {
+          s.className = s.className.replace(RegExp(' ?' + y), '')
+        };
+        (a[n] = a[n] || []).hide = h;
+        setTimeout(function() {
+          i();
+          h.end = null
+        }, c);
+        h.timeout = c;
+      })(window, document.documentElement, 'async-hide', 'dataLayer', 4000, {
+        'OPT-NN7VNM4': true
+      });
+    </script>
+    <script src="https://www.googleoptimize.com/optimize.js?id=OPT-NN7VNM4" type="cb198417c65ca73b134d68ca-text/javascript"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-86CF1JXJJ9" type="cb198417c65ca73b134d68ca-text/javascript"></script>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-86CF1JXJJ9', {
+        optimize_id: 'OPT-NN7VNM4'
+      });
+      // gtag('event', 'view_item', {'send_to': '', });
+      // gtag('event', 'begin_checkout', {'send_to': '', });
+      // gtag('event', 'purchase', {'send_to': '', });
+      if (typeof ga === 'undefined') {
+        window.ga = {};
+      }
+      document.addEventListener("DOMContentLoaded", function() {
+        ga.setCookie = function(name, value, days) {
+          var expires = "";
+          if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+          }
+          document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+        ga.getCookie = function(name) {
+          var nameEQ = name + "=";
+          var ca = document.cookie.split(';');
+          for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+          }
+          return null;
+        }
+        ga.ViewItem = function($itemSKU, $itemValue) {
+          gtag("event", "view_item", {
+            currency: "USD",
+            value: $itemValue,
+            items: [{
+              item_id: $itemSKU,
+              item_name: "Cortexi (" + $itemSKU + ")",
+            }]
+          });
+          console.log("GA4 Track View Item", $itemSKU, $itemValue);
+        }
+        ga.BeginCheckout = function($itemSKU, $itemValue) {
+          gtag("event", "begin_checkout", {
+            currency: "USD",
+            value: $itemValue,
+            items: [{
+              item_id: $itemSKU,
+              item_name: "Cortexi (" + $itemSKU + ")",
+            }]
+          });
+          console.log("GA4 Track Begin Checkout", $itemSKU, $itemValue);
+        }
+        ga.writePurchaseEventToCookie = function(order, purchaseEvent) {
+          var purchaseEventJson = JSON.stringify(purchaseEvent);
+          document.cookie = order + "_purchase_event=" + encodeURIComponent(purchaseEventJson) + "; path=/";
+        };
+        ga.getExistingPurchaseEventFromCookie = function(order) {
+          var purchaseEventJson = ga.getCookie(order + '_purchase_event');
+          if (purchaseEventJson) {
+            var purchaseEvent = JSON.parse(decodeURIComponent(purchaseEventJson));
+            return purchaseEvent;
+          }
+          return null;
+        };
+        ga.Purchase = function($order, $itemSKU, $itemValue) {
+          var existingPurchaseEvent = ga.getExistingPurchaseEventFromCookie($order);
+          var purchaseEvent = existingPurchaseEvent || {
+            currency: "USD",
+            transaction_id: $order,
+            value: 0,
+            items: []
+          };
+          purchaseEvent.items.push({
+            item_id: $itemSKU,
+            item_name: "Cortexi (" + $itemSKU + ")",
+          });
+          purchaseEvent.value += Number($itemValue);
+          ga.writePurchaseEventToCookie($order, purchaseEvent);
+          gtag("event", "purchase", purchaseEvent);
+          console.log("GA4 Track Purchase", $order, purchaseEvent);
+        };
+        ga.uniqid = Math.floor(Math.random() * 1000) + Date.now().toString();
+        ga.setCookie('ga_uniqid', ga.uniqid, 3);
+        ga.ViewItem("CTX01", 69);
+        ga.ViewItem("CTX06", 294);
+        ga.ViewItem("CTX03", 177);
+        ga.buttons = document.getElementsByClassName('addToCart');
+        for (var i = 0; i < ga.buttons.length; i++) {
+          ga.buttons[i].addEventListener('click', (e) => {
+            ga.BeginCheckout(e.target.dataset.sku, e.target.dataset.price);
+            ga.setCookie(ga.uniqid + '_sku', e.target.dataset.sku, 3);
+            ga.setCookie(ga.uniqid + '_price', e.target.dataset.price, 3);
+            if (typeof window[e.target.dataset.callback] === 'function') {
+              window[e.target.dataset.callback]();
+            }
+          }, false);
+        }
+      });
+    </script>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      var mysrc = "https://tracking.buygoods.com/track/?a=7940&firstcookie=0" + "&tracking_redirect=&referrer=" + encodeURIComponent(document.referrer) + "&sessid2=" + ReadCookie('sessid2') + "&product=CTX01,CTX06,CTX03&caller_url=" + encodeURIComponent(window.location.href);
+      if (typeof add_to_cart !== 'undefined') {
+        mysrc = mysrc + '&add_to_cart=' + add_to_cart;
+      }
+      var newScript = document.createElement('script');
+      newScript.type = 'text/javascript';
+      newScript.defer = true;
+      newScript.src = mysrc;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(newScript, s);
+
+      function ReadCookie(name) {
+        name += '=';
+        var parts = document.cookie.split(/;\s*/);
+        for (var i = 0; i < parts.length; i++) {
+          var part = parts[i];
+          if (part.indexOf(name) == 0) return part.substring(name.length)
+        }
+        return '';
+      }
+    </script>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      setTimeout(function() {
+        var i = document.createElement("iframe"),
+          oid = new URLSearchParams(window.location.search);
+        i.async = true;
+        i.style = "display:none";
+        i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=7871&t=18ecb169115fc33fdfcd4c7574ab6fc5&s=" + ReadCookie('sessid2'));
+        document.body.appendChild(i);
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-md text-uppercase py-3">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img class="img-fluid topLogo" src="images/Cortexi-2.png">
+        </a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5">
+          <span class="visually-hidden">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-5">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link inner-link" href="#benefits">Benefits</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cdn-cgi/l/email-protection#d3a0a6a3a3bca1a793b4b6a7b0bca1a7b6abbafdb0bcbe">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pagamento-page/index.html">ORDER NOW</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero">
+      <div class="container container-big py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+          <div class="col-md-6 col-lg-5 col-xl-6 order-sm-last order-md-last d-none d-md-block">
+            <img class="rounded img-fluid" src="images/PROD-Hero.png">
+          </div>
+          <div class="col-md-6 col-lg-5 col-xl-6 order-sm-last order-md-last d-xs-block d-md-none">
+            <img class="rounded img-fluid d-block m-auto" src="images/PRODx1.png">
+          </div>
+          <div class="col-md-6 col-lg-7 col-xl-6 d-md-flex align-items-md-center order-sm-first order-first order-md-last" style="--bs-primary: #379884;--bs-primary-rgb: 55,152,132;">
+            <div class="hero-text-box">
+              <div>
+                <h1 class="main-heading text-white hero-heading">
+                  <span>360 Degree</span>
+                  <span class="d-md-inline d-sm-none d-xs-none">
+                    <br>
+                  </span>Hearing Support
+                </h1>
+              </div>
+              <h3 class="text-white hero-text">Cortexi the Herbal Science Breakthrough in Hearing Health</h3>
+              <img class="img-fluid mx-sm-auto d-block mx-md-0" src="images/certifications.png">
+              <button class="btn btn-secondary btn-lg cta-button mx-sm-auto d-block mx-md-0" type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:location.href='./pagamento-page/index.html'" data-cf-modified-cb198417c65ca73b134d68ca->ORDER NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tribal"></section>
+    <section class="benefits" id="benefits">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 text-center">
+            <img class="img-fluid rounded-circle" src="images/benefits1.jpg">
+            <p class="fs-3 fw-bolder">
+              <strong>
+                <span style="color: rgb(0, 0, 0);">SUPPORTS HEALTHY HEARING</span>
+              </strong>
+            </p>
+          </div>
+          <div class="col-sm-4 col-md-4 text-center">
+            <img class="img-fluid rounded-circle" src="images/benefits2.jpg">
+            <p class="fs-3 fw-bolder">STRENGTHENS MEMORY</p>
+          </div>
+          <div class="col-sm-4 col-md-4 text-center">
+            <img class="img-fluid rounded-circle" src="images/benefits3.jpg">
+            <p class="fs-3 fw-bolder">SHARPENS MENTAL ACUITY</p>
+          </div>
+        </div>
+        <p>Are you worried about damaging your hearing? Have you experienced any mental fog or a decrease in your memory as of late? Is the thought of having to rely on a hearing aid frightening to you? <br>
+          <br>Well, I’ve got good news for you. You can take steps to protect your ears from damage starting today. Our new and improved <strong>Cortexi </strong>formula works to shield your ears using only research-backed, all-natural ingredients combined in the precise ratios required to support healthy hearing.
+        </p>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span class="bs-icon-xl d-flex justify-content-center align-items-center bs-icon me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                </svg>
+              </span>
+              <span class="fs-5">Natural Formula</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span class="bs-icon-xl d-flex justify-content-center align-items-center bs-icon me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                </svg>
+              </span>
+              <span class="fs-5">Plant Ingredients</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span class="bs-icon-xl d-flex justify-content-center align-items-center bs-icon me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                </svg>
+              </span>
+              <span class="fs-5">Non-GMO</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span class="bs-icon-xl d-flex justify-content-center align-items-center bs-icon me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                </svg>
+              </span>
+              <span class="fs-5">Easy To Swallow</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span class="bs-icon-xl d-flex justify-content-center align-items-center bs-icon me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                </svg>
+              </span>
+              <span class="fs-5">No Stimulants</span>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="fw-bold d-flex align-items-center mb-2">
+              <span class="bs-icon-xl d-flex justify-content-center align-items-center bs-icon me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                </svg>
+              </span>
+              <span class="fs-5">Non-Habit Forming</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-lg d-block mx-auto cta-button" type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:location.href='./pagamento-page/index.html'" data-cf-modified-cb198417c65ca73b134d68ca->LEARN MORE</button>
+        </div>
+      </div>
+    </section>
+    <section class=".bg-light">
+      <div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+          <div class="col-md-6">
+            <img class="rounded img-fluid w-100 fit-cover" style="min-height: 300px;" src="images/couple.jpg">
+          </div>
+          <div class="col-md-6 d-md-flex align-items-md-center">
+            <div class="width-450">
+              <h2 class="text-uppercase fw-bold">Feel Great - ENJOY LIFE</h2>
+              <p class="my-3">Helping your ears stay healthy and functioning is a lifelong journey, but with Cortexi you’ll have a strong ally by your side. Here are just some of the proven benefits of taking Cortexi as part of a healthy and balanced diet:</p>
+              <div class="fw-bold d-flex align-items-center">
+                <span class="bs-icon-md d-flex justify-content-center align-items-center bs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                  </svg>
+                </span>
+                <span>HEALTHY HEARING SUPPORT</span>
+              </div>
+              <div class="fw-bold d-flex align-items-center">
+                <span class="bs-icon-md d-flex justify-content-center align-items-center bs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                  </svg>
+                </span>
+                <span>NATURAL MEMORY SHIELDING</span>
+              </div>
+              <div class="fw-bold d-flex align-items-center">
+                <span class="bs-icon-md d-flex justify-content-center align-items-center bs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                  </svg>
+                </span>
+                <span>MENTAL SHARPNESS AID</span>
+              </div>
+              <div class="fw-bold d-flex align-items-center">
+                <span class="bs-icon-md d-flex justify-content-center align-items-center bs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check2-circle text-primary">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z" />
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z" />
+                  </svg>
+                </span>
+                <span>OVERALL INFLAMMATION REDUCTION</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-5 bg-secondary">
+      <div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+          <div class="col-md-6 col-lg-6 order-sm-last order-md-last">
+            <img class="rounded img-fluid d-block mx-auto" src="images/PRODx1-badge.png">
+          </div>
+          <div class="col-md-6 col-lg-6 d-md-flex align-items-md-center order-sm-first order-first order-md-last">
+            <div class="hero-text-box">
+              <div>
+                <h1 class="main-heading hero-heading">TAKE CARE OF YOUR HEARING STARTING TODAY</h1>
+              </div>
+              <h3 class="hero-text-box">Try out the new & improved Cortexi formula</h3>
+              <button class="btn btn-primary btn-lg cta-button" type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:location.href='./pagamento-page/index.html'" data-cf-modified-cb198417c65ca73b134d68ca->ORDER NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="free-shipping">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-lg-3">
+            <img class="img-fluid mx-auto d-block shipping-icon" src="fonts/shipping.svg">
+          </div>
+          <div class="col-md-12 col-lg-9 align-self-center">
+            <div class="text-center">
+              <h3 class="fw-bolder">Every <span class="is-underlined">6 Bottles</span> Order Gets <span class="is-underlined">FREE Shipping</span> Too! </h3>
+              <h5>*96% Of Customers Order 6 Bottles (Our Recommended Option)</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-secondary">
+      <div class="container py-5">
+        <div class="row bg-white rounded-4">
+          <div class="col-md-4 col-lg-4">
+            <img class="img-fluid mx-auto d-block" src="images/guarantee.jpg">
+          </div>
+          <div class="col-md-8 col-lg-8">
+            <h1 class="fw-bolder">60-DAY MONEY BACK GUARANTEE 100% SATISFACTION GUARANTEED <br>
+            </h1>
+            <p>Cortexi comes with a 100% money back guarantee - 60 full days from your original purchase. If you're not totally and completely satisfied with our product or your results within the first 60 days simply let us know by calling our toll-free number or dropping us an email and we'll gladly give you a <strong>full refund within 48</strong> hours of the product being returned. That's right - simply return the product, even your empty bottles, anytime within 60 days of your purchase and you'll receive a full, no-questions-asked refund (minus shipping and handling fees). </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class=".bg-light">
+      <div class="container py-5 narrow-container">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-lg-3">
+          <div class="col-sm-6 col-lg-6 col-xl-6">
+            <div class="card border-primary border-0 h-100">
+              <div class="card-body d-flex flex-column justify-content-between bonuses">
+                <div>
+                  <div>
+                    <img class="img-fluid" src="images/research1.jpg" width="733" height="414">
+                  </div>
+                  <div class="bonus-text my-3 p-4">
+                    <p>Cortexi Research’s contains only the natural ingredients that are effective in supporting incredible hearing naturally.</p>
+                  </div>
+                </div>
+                <a class="btn btn-primary btn-lg m-3" role="button" href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:location.href='/b/order-now.php'" data-cf-modified-cb198417c65ca73b134d68ca->DISCOVER MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-6 col-xl-6">
+            <div class="card border-primary border-0 h-100">
+              <div class="card-body d-flex flex-column justify-content-between bonuses">
+                <div>
+                  <div>
+                    <img class="img-fluid" src="images/research2.jpg" width="733" height="413">
+                  </div>
+                  <div class="bonus-text my-3 p-4">
+                    <p>A unique team of health and industry professionals dedicated to unlocking the secrets of happier living through a healthier body. </p>
+                  </div>
+                </div>
+                <a class="btn btn-primary btn-lg m-3" role="button" href="#" onclick="if (!window.__cfRLUnblockHandlers) return false; javascript:location.href='/b/order-now.php'" data-cf-modified-cb198417c65ca73b134d68ca->DISCOVER MORE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <script data-cfasync="false" src="js/email-decode.min.js"></script>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      setTimeout(function() {
+        var i = document.createElement("iframe"),
+          oid = new URLSearchParams(window.location.search);
+        i.async = true;
+        i.style = "display:none";
+        i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=7940&t=18ecb169115fc33fdfcd4c7574ab6fc5&s=" + ReadCookie('sessid2'));
+        document.body.appendChild(i);
+      }, 1000);
+    </script>
+    <style>
+        .footer {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          background-color: #333;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+        }
+        
+        .footer p {
+          margin: 0;
+          font-size: 14px;
+        }
+        
+        .footer a {
+          color: white;
+          text-decoration: none;
+        }
+        
+        .footer a:hover {
+          text-decoration: underline;
+        }
+      </style>
+      
+      <div class="footer">
+        <p>Copyright © Cortexi 2023 | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+      </div>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      function trackInitiateCheckout(url, nid, init_id, elemClass) {
+        if (typeof evf === 'undefined') {
+          window.evf = {};
+        }
+        evf.url = url;
+        evf.nid = nid;
+        evf.init_id = init_id;
+        evf.checkoutStarted = false;
+        evf.urlParam = function(param) {
+          var t = new RegExp("[?&]" + param + "=([^&#]*)").exec(window.location.href);
+          return null === t ? null : t[1] || 0
+        }
+        evf.addToCartEvent = function() {
+          if (!evf.checkoutStarted) {
+            evf.checkoutStarted = true;
+            evf.script = document.createElement('iframe');
+            evf.script.width = 1;
+            evf.script.height = 1;
+            evf.script.frameBorder = 0;
+            evf.script.transaction_id = evf.urlParam('subid2');
+            evf.script.src = "https://www." + evf.url + ".com/?nid=" + evf.nid + "&event_id=" + evf.init_id + "&transaction_id=" + evf.script.transaction_id + "";
+            document.getElementsByTagName('body')[0].appendChild(evf.script);
+            console.log('Track InitiateCheckout Event');
+            if (typeof(fbq) === 'function') {
+              fbq('track', 'InitiateCheckout');
+            }
+            if (typeof(runPixels) === 'function') {
+              runPixels("InitiateCheckout");
+            }
+          }
+        }
+        evf.buttons = document.getElementsByClassName(elemClass);
+        for (var i = 0; i < evf.buttons.length; i++) {
+          evf.buttons[i].addEventListener('click', evf.addToCartEvent, false);
+        }
+      }
+    </script>
+    <script type="cb198417c65ca73b134d68ca-text/javascript">
+      trackInitiateCheckout("halfkjrjd3ew", 2137, 15, "addToCart");
+    </script>
+    <script src="js/bootstrap.bundle.min.js" type="cb198417c65ca73b134d68ca-text/javascript"></script>
+    <script src="js/rocket-loader.min.js" data-cf-settings="cb198417c65ca73b134d68ca-|49" defer></script>
+  </body>
+</html>
